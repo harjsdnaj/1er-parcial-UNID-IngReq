@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Rick Sanchez — Portalverse</title>
+</head>
+<body>
+
+  <div class="noise"></div>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">●</span>
+        <span class="logo-text">Portal<span class="logo-accent">verse</span></span>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link active">Personajes</a>
+        <a href="#" class="nav-link">Episodios</a>
+        <a href="#" class="nav-link">Locaciones</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="profile-back">
+      <a href="index.html" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/>
+        </svg>
+        Volver a personajes
+      </a>
+    </div>
+
+    <section class="profile-section">
+      <div class="profile-layout">
+        <div class="profile-image-col">
+          <div class="profile-portal-ring">
+            <div class="portal-ring"></div>
+            <div class="portal-ring portal-ring-2"></div>
+          </div>
+          <div class="profile-image-frame">
+            <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="Rick Sanchez" />
+          </div>
+        </div>
+        <div class="profile-info-col">
+          <div class="profile-meta-top">
+            <span class="profile-status">
+              <span class="status-dot alive"></span>
+              Alive
+            </span>
+            <span class="profile-divider-dot"></span>
+            <span class="profile-species">Human</span>
+          </div>
+          <h1 class="profile-name">Rick Sanchez</h1>
+
+          <div class="profile-details">
+            <div class="profile-detail-item">
+              <span class="detail-label">Género</span>
+              <span class="detail-value">Masculino</span>
+            </div>
+            <div class="profile-detail-item">
+              <span class="detail-label">Origen</span>
+              <span class="detail-value">Earth (C-137)</span>
+            </div>
+            <div class="profile-detail-item">
+              <span class="detail-label">Ubicación</span>
+              <span class="detail-value">Earth (Replacement Dimension)</span>
+            </div>
+            <div class="profile-detail-item">
+              <span class="detail-label">Tipo</span>
+              <span class="detail-value">—</span>
+            </div>
+          </div>
+
+          <div class="profile-stats">
+            <div class="profile-stat">
+              <span class="profile-stat-num">51</span>
+              <span class="profile-stat-label">Episodios</span>
+            </div>
+            <div class="profile-stat-sep"></div>
+            <div class="profile-stat">
+              <span class="profile-stat-num">S01E01</span>
+              <span class="profile-stat-label">Primera aparición</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="episodes-section">
+      <div class="episodes-header">
+        <h2 class="episodes-title">Apariciones en episodios</h2>
+        <span class="episodes-count">51 episodios</span>
+      </div>
+      <div class="episodes-list">
+
+        <div class="episode-item">
+          <div class="episode-num">S01E01</div>
+          <div class="episode-info">
+            <span class="episode-name">Pilot</span>
+            <span class="episode-date">2 de diciembre de 2013</span>
+          </div>
+          <button class="episode-btn">
+            Ver episodio
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="episode-item">
+          <div class="episode-num">S01E02</div>
+          <div class="episode-info">
+            <span class="episode-name">Lawnmower Dog</span>
+            <span class="episode-date">9 de diciembre de 2013</span>
+          </div>
+          <button class="episode-btn">
+            Ver episodio
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="episode-item">
+          <div class="episode-num">S01E03</div>
+          <div class="episode-info">
+            <span class="episode-name">Anatomy Park</span>
+            <span class="episode-date">16 de diciembre de 2013</span>
+          </div>
+          <button class="episode-btn">
+            Ver episodio
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="episode-item">
+          <div class="episode-num">S01E04</div>
+          <div class="episode-info">
+            <span class="episode-name">M. Night Shaym-Aliens!</span>
+            <span class="episode-date">13 de enero de 2014</span>
+          </div>
+          <button class="episode-btn">
+            Ver episodio
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="episode-item">
+          <div class="episode-num">S01E05</div>
+          <div class="episode-info">
+            <span class="episode-name">Meeseeks and Destroy</span>
+            <span class="episode-date">20 de enero de 2014</span>
+          </div>
+          <button class="episode-btn">
+            Ver episodio
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="episode-item">
+          <div class="episode-num">S01E06</div>
+          <div class="episode-info">
+            <span class="episode-name">Rick Potion #9</span>
+            <span class="episode-date">27 de enero de 2014</span>
+          </div>
+          <button class="episode-btn">
+            Ver episodio
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; 2025 Portalverse &mdash; Hecho con <span class="footer-heart">&#10022;</span> para exploradores del multiverso.</p>
+      <div class="footer-links">
+        <a href="#" class="footer-link">GitHub</a>
+        <a href="#" class="footer-link">Documentación</a>
+        <a href="#" class="footer-link">API</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
