@@ -84,13 +84,14 @@ const renderCharacters = (characters) => {
   }).join("")
 }
 
-const filterState = { name: "", status: "", species: ""}
+const filterState = { name: "", status: "", species: "", gender: ""}
 
 function filterUrl() {
   const p = new URLSearchParams()
   if (filterState.name) p.set("name", filterState.name)
   if (filterState.status) p.set("status", filterState.status)
   if (filterState.species) p.set("species", filterState.species)
+  if (filterState.gender) p.set("gender", filterState.gender)
   const q = p.toString()
   return `https://rickandmortyapi.com/api/character${q ? "?" + q : ""}`
 }
@@ -113,6 +114,7 @@ document.querySelectorAll(".filter-select").forEach(sel => {
   sel.addEventListener("change", function() {
     const label = this.closest(".filter-group").querySelector(".filter-label").textContent
     if (label === "Especie") filterState.species = this.value
+    if (label === "Género") filterState.gender = this.value
     loadDataPage(filterUrl())
   })
 })
