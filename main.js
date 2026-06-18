@@ -83,3 +83,9 @@ const renderCharacters = (characters) => {
     `
   }).join("")
 }
+
+document.querySelector(".filter-search").addEventListener("input", function() {
+  const name = this.value
+  const url = name ? `https://rickandmortyapi.com/api/character/?name=${name}` : "https://rickandmortyapi.com/api/character"
+  loadDataPage(url)
+})
