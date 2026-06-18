@@ -61,8 +61,9 @@ const getQueryParam = (key) => {
       const season  = parseInt(episode.episode.slice(1, 3), 10)
       const epNum   = episode.episode.slice(3)
   
-      setText(".profile-name", episode.name)
+      setText("h1.profile-name", episode.name)
       setText(".profile-species", `Temporada ${season} · ${epNum}`)
+      setText("#episode-code-badge", episode.episode)
   
       setDetail("Código",      episode.episode)
       setDetail("Temporada",   `Temporada ${season}`)

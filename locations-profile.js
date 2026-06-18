@@ -9,7 +9,7 @@ const getQueryParam = (key) => {
   }
   
   const renderResidents = async (residentUrls) => {
-    const list = document.querySelector(".residents-list")
+    const list = document.querySelector(".episodes-list")
     if (!list) return
   
     const ids = residentUrls.map(url => url.split("/").pop()).filter(Boolean)
@@ -52,7 +52,7 @@ const getQueryParam = (key) => {
       if (!response.ok) throw new Error("No se pudo cargar la locación")
       const location = await response.json()
   
-      setText(".profile-name", location.name)
+      setText("h1.profile-name", location.name)
       setText(".profile-species", location.type)
   
       const setDetail = (label, value) => {
