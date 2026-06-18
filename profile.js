@@ -72,10 +72,15 @@ const loadCharacter = async () => {
     if (!response.ok) throw new Error('No se pudo cargar el personaje')
 
     const character = await response.json()
-    const image = document.querySelector('.profile-image-frame img')
+    const skeleton = document.querySelector('.profile-img-skeleton')
+    const image = document.querySelector('.profile-img')
     if (image) {
-      image.src = character.image
       image.alt = character.name
+      image.onload = () => {
+        skeleton?.remove()
+        image.classList.remove('hidden')
+      }
+      image.src = character.image
     }
 
     setText('.profile-name', character.name)

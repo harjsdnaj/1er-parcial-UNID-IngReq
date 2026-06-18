@@ -710,7 +710,7 @@ body {
 }
 
 .filter-select {
-  background: rgba(255, 255, 255, 0.04) !important;
+  background: #211c2b !important;
   border: 1px solid var(--border-subtle) !important;
   border-radius: var(--radius-sm) !important;
   color: var(--text-primary) !important;
@@ -938,6 +938,37 @@ body {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.profile-img-skeleton {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: block;
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-card);
+}
+
+.profile-img-skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 255, 135, 0.05) 35%,
+    rgba(0, 255, 135, 0.12) 50%,
+    rgba(0, 255, 135, 0.05) 65%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes skeleton-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
 .profile-image-frame::after {
