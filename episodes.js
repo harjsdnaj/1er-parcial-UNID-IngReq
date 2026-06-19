@@ -17,6 +17,15 @@ nextPage.addEventListener("click", e => {
   loadDataPage(nextPage.getAttribute("href"))
 })
 
+const getPageNumber = (link) => {
+  try {
+    const url = new URL(link)
+    return url.searchParams.get("page") || 1
+  } catch {
+    return 1
+  }
+}
+
 const loadDataPage = async (link = 'https://rickandmortyapi.com/api/episode') => {
   const response = await fetch(link)
   const data = await response.json()
@@ -28,8 +37,7 @@ const loadDataPage = async (link = 'https://rickandmortyapi.com/api/episode') =>
 
   episodes_container.innerHTML = renderEpisodes(data.results)
 
-  const page = link.split("=")
-  currentPage.textContent = page[1] || 1
+  currentPage.textContent = getPageNumber(link)
   paginationNav(data.info)
 }
 
@@ -50,31 +58,42 @@ const formatCode = (episodeCode) => {
 }
 
 const renderEpisodes = (episodes) => {
-  return episodes.map(episode => `
-    <div class="character-card" data-episode-id="${episode.id}">
-      <a href="episode-profile.html?id=${episode.id}">
-        <div class="card-body-custom">
-          <p class="card-species">${formatCode(episode.episode)}</p>
-          <h3 class="card-name">${episode.name}</h3>
-          <div class="card-footer">
-            <span class="card-origin">${episode.air_date}</span>
-            <button class="card-btn" type="button">
-              Ver más
-              <span class="card-btn-arrow">&rarr;</span>
-            </button>
+  return episodes.map(episode => {
+    const season = getSeason(episode.episode)
+    return `
+      <div class="character-card" data-episode-id="${episode.id}" data-season="${season}">
+        <a href="episode-profile.html?id=${episode.id}">
+          <div class="card-body-custom">
+            <p class="card-species">${formatCode(episode.episode)}</p>
+            <h3 class="card-name">${episode.name}</h3>
+            <div class="card-footer">
+              <span class="card-origin">${episode.air_date}</span>
+              <button class="card-btn" type="button">
+                Ver más
+                <span class="card-btn-arrow">&rarr;</span>
+              </button>
+            </div>
           </div>
-        </div>
-      </a>
-    </div>
-  `).join("")
+        </a>
+      </div>
+    `
+  }).join("")
 }
 
-const filterState = { name: "" }
+const applySeasonFilter = () => {
+  if (!activeSeason) return
+  document.querySelectorAll("#episodes_container .character-card").forEach(card => {
+    card.style.display = card.dataset.season === activeSeason ? "" : "none"
+  })
+}
+
+const filterState = { name: "", season: "" }
 let activeSeason = ""
 
 function filterUrl() {
   const p = new URLSearchParams()
   if (filterState.name) p.set("name", filterState.name)
+  if (filterState.season) p.set("episode", filterState.season)
   const q = p.toString()
   return `https://rickandmortyapi.com/api/episode${q ? "?" + q : ""}`
 }
@@ -89,17 +108,8 @@ document.querySelectorAll(".filter-chip[data-season]").forEach(btn => {
     document.querySelectorAll(".filter-chip[data-season]").forEach(b => b.classList.remove("active"))
     this.classList.add("active")
     activeSeason = this.dataset.season
+    filterState.season = activeSeason
 
-    document.querySelectorAll("#episodes_container .character-card").forEach(card => {
-      const id = card.dataset.episodeId
-      const code = card.querySelector(".card-species")?.textContent || ""
-      if (!activeSeason) {
-        card.style.display = ""
-      } else {
-        const seasonNum = parseInt(activeSeason.slice(1), 10)
-        const cardSeason = parseInt(code.replace("T", ""), 10)
-        card.style.display = cardSeason === seasonNum ? "" : "none"
-      }
-    })
+    loadDataPage(filterUrl())
   })
 })
