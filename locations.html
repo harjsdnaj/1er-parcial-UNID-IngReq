@@ -21,13 +21,13 @@
         <span class="logo-text">Portal<span class="logo-accent">verse</span></span>
       </a>
       <nav class="nav">
-        <a href="/profile.html" class="nav-link active">Personajes</a>
+        <a href="/index.html" class="nav-link active">Personajes</a>
         <a href="/episodios.html" class="nav-link active">Episodios</a>
         <a href="/locations.html" class="nav-link active">Locaciones</a>
       </nav>
     </div>
   </header>
-
+ 
   <main>
     <section class="hero">
       <div class="hero-bg">
@@ -37,7 +37,7 @@
           <div class="orb orb-3"></div>
         </div>
       </div>
-      <div class="hero-content">
+      <div class="heroe-group -space-x-6">
         <span class="hero-badge">Explora el multiverso</span>
         <h1 class="hero-title">Locaciones</h1>
         <p class="hero-subtitle">Todos los planetas, dimensiones y lugares del cosmos.</p>
@@ -65,72 +65,33 @@
         <h2 class="section-title">Galería de Locaciones</h2>
         <p class="section-desc">Cada portal lleva a un rincón distinto del universo.</p>
       </div>
-      <div class="container mx-auto px-4 md:px-8">
-
-        <div class="filters-bar">
-          <div class="filters-inner">
-            <div class="filter-group filter-group-search">
-              <span class="filter-label">Buscar</span>
-              <div class="search-input-wrapper">
-                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                </svg>
-                <input type="search" class="input filter-search" placeholder="Buscar locación..." />
-              </div>
-            </div>
-            <div class="filter-group">
-              <span class="filter-label">Tipo</span>
-              <select class="select filter-select" data-filter="type">
-                <option value="">Todos</option>
-                <option value="Planet">Planeta</option>
-                <option value="Space station">Estación espacial</option>
-                <option value="Microverse">Microverso</option>
-                <option value="TV">TV</option>
-                <option value="Resort">Resort</option>
-                <option value="Fantasy town">Ciudad fantasía</option>
-                <option value="Dream">Sueño</option>
-                <option value="Dimension">Dimensión</option>
-              </select>
-            </div>
-            <div class="filter-group">
-              <span class="filter-label">Dimensión</span>
-              <select class="select filter-select" data-filter="dimension">
-                <option value="">Todas</option>
-                <option value="Dimension C-137">C-137</option>
-                <option value="Replacement Dimension">Replacement</option>
-                <option value="Cronenberg Dimension">Cronenberg</option>
-                <option value="Fantasy Dimension">Fantasy</option>
-                <option value="Post-Apocalyptic Dimension">Post-Apocalíptica</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <div class="pagination-bar" id="pagination_container">
-          <a href="#" id="prev_page" class="pagination-btn pagination-prev">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-            </svg>
-            Anterior
-          </a>
-          <div class="pagination-info">
-            <span class="pagination-label">Página</span>
-            <span class="pagination-current" id="current_page">1</span>
-            <span class="pagination-sep">de</span>
-            <span class="pagination-total" id="total_pages">7</span>
-          </div>
-          <a href="#" id="next_page" class="pagination-btn pagination-next">
-            Siguiente
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-            </svg>
-          </a>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6"
-          id="locations_container">
-        </div>
-      </div>
+      <div class="avatar-group -space-x-6">
+  <div class="">
+    <div class="w-12">
+      <img src="https://img.rickandmortyapi.com/images/profile/specie/rickandmorty192.webp" />
+    </div>
+  </div>
+  <div class="">
+    <div class="w-12">
+      <img src="https://img.rickandmortyapi.com/images/profile/specie/rickandmorty@192.webp" />
+    </div>
+  </div>
+  <div class="">
+    <div class="w-12">
+      <img src="https://img.rickandmortyapi.com/images/profile/specie/ricksmith@192.webp" />
+    </div>
+  </div>
+  <div class="avatar avatar-placeholder">
+    <div class="bg-neutral div w-12 text-white">
+       +99
+    </div>
+  </div>
+  <div class="avatar avatar-placeholder">
+    <div class="bg-neutral div w-12 text-white">
+      <span>+99</span>
+    </div>
+  </div>
+</div>
     </section>
   </main>
 
